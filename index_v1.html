@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transcrição de Reunião - Streaming</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.2/RecordRTC.js"></script>
+    <script defer src="script.js"></script>    
+</head>
+<body>
+    <div class="container">
+        <h1>Transcrição de Reunião - Streaming</h1>
+        <form id="form">
+            <div>
+                <label for="gladia_key">Gladia API key</label>
+                <input id="gladia_key" name="gladia_key" type="text" placeholder="Gladia API key" required value="e246feea-1228-4e27-b9de-5dfeec32de4b"/>
+            </div>
+            <div>
+                <label for="mic_device">Dispositivo de entrada de áudio (Microfone)</label>
+                <select id="mic_device" name="mic_device" required></select>
+            </div>
+            <button type="submit">Iniciar gravação</button>
+            <button type="button" id="stopButton" style="color: white;" disabled>Parar gravação</button>
+        </form>
+        <div id="result" style="display: none;">
+            <h2>Transcrição</h2>
+            <div id="finals"></div>
+            <div style="color: red;" id="partials"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transcrição de Reunião - Streaming</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.2/RecordRTC.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script defer src="script.js"></script>    
+</head>
+<body>
+    <div class="container">
+        <h1>Transcrição de Reunião - Streaming</h1>
+        <form id="form">
+            <div>
+                <label for="gladia_key">Gladia API key</label>
+                <input id="gladia_key" name="gladia_key" type="text" placeholder="Gladia API key" required/>
+            </div>
+            <div>
+                <label for="mic_device">Dispositivo de entrada de áudio (Microfone)</label>
+                <select id="mic_device" name="mic_device" required></select>
+            </div>
+            <button type="submit">Iniciar gravação</button>
+            <button type="button" id="stopButton" style="color: white;" disabled>Parar gravação</button>
+        </form>
+        <div id="result" style="display: none;">
+            <h2>Transcrição</h2>
+            <div id="timer">Duração: 00:00</div>
+            <div class="transcript-container">
+                <div id="mic_transcript"><h3>Microfone</h3></div>
+                <div id="audio_transcript"><h3>Áudio do Sistema</h3></div>
+                <div style="color: red;" id="partials"></div>
+            </div>
+            <div class="summary-container" id="summary-container"></div>
+            <div id="buttons-container" style="display: none;">
+                <button class="action-button" id="extractPointsButton">Extrair pontos chaves</button>
+                <button class="action-button" id="extractTodoListButton">Extrair lista de atividades</button>
+                <button class="action-button" id="generateMeetingAgendaButton">Gerar pauta da reunião</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
